@@ -35,7 +35,7 @@ class Student
 
   end
 
-  def create
+  def self.create
     Student.new(self.name, self.grade, self.id)
     self.save
   end
