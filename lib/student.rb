@@ -37,11 +37,11 @@ class Student
 
   def self.create(hash)
     self.create_table
-    hash.each do |k,v|
-      self.send(("#{k=}"), "#{v}")
-      student = Student.new(self.name, self.grade)
-      student.save
-    end
+    # hash.each do |k,v|
+    #   self.send(("#{k=}"), "#{v}")
+    #   student = Student.new(self.name, self.grade)
+    #   student.save
+    # end
 
 
   end
