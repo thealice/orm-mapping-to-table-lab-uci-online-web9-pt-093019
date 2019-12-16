@@ -23,6 +23,13 @@ class Student
     sql = "DROP TABLE students;"
     DB[:conn].execute(sql)
   end
+
+  def save
+    sql = <<-SQL
+      INSERT INTO students
+      VALUES (?,?);
+    SQL
+  end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
