@@ -2,13 +2,10 @@ class Student
   attr_accessor :name, :grade
   attr_reader :id
 
-  def initialize(attributes)
-    attributes.each do |k,v|
-      self.send(("k="), v)
-    end
-    # @name = name
-    # @grade = grade
-    # @id = id
+  def initialize(name, grade, id=nil)
+    @name = name
+    @grade = grade
+    @id = id
   end
 
   def self.create_table
@@ -40,8 +37,13 @@ class Student
 
   def self.create(hash)
     self.create_table
-    student = self.new(hash)
-    student.save
+    hash.each do |k,v|
+      self.send(("k="), v)
+      student = Student.new(self.name, self.grade)
+      student.save
+    end
+    
+    
   end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
