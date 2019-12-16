@@ -3,6 +3,9 @@ class Student
   attr_reader :id
 
   def initialize(attributes)
+    attributes.each do |k,v|
+      self.send(("k="), v)
+    end
     @name = name
     @grade = grade
     @id = id
