@@ -35,7 +35,7 @@ class Student
 
   end
 
-  def self.create
+  def self.create(hash)
     self.create_table
     student = self.new(hash)
     student.save
