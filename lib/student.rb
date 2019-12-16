@@ -36,8 +36,9 @@ class Student
   end
 
   def self.create
-    self.new("alice", "10")
-    self.save
+    self.create_table
+    student = self.new(hash)
+    student.save
   end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
