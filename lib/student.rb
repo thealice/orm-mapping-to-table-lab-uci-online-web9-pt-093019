@@ -29,8 +29,9 @@ class Student
       INSERT INTO students
       VALUES (?,?,?)
     SQL
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+
     DB[:conn].execute(sql, @id, self.name, self.grade)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
 
 
   end
