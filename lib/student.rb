@@ -6,9 +6,9 @@ class Student
     attributes.each do |k,v|
       self.send(("k="), v)
     end
-    @name = name
-    @grade = grade
-    @id = id
+    # @name = name
+    # @grade = grade
+    # @id = id
   end
 
   def self.create_table
